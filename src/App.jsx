@@ -5,6 +5,7 @@ import Shop from "./views/Shop";
 import Home from "./views/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 /* Npm som används
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );
