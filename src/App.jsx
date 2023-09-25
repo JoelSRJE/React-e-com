@@ -1,9 +1,10 @@
 import { useState } from "react";
-import "./App.css";
-import about from "./views/About";
-import contact from "./views/Contact";
-import shop from "./views/Shop";
-import home from "./views/Home";
+import About from "./views/About";
+import Contact from "./views/Contact";
+import Shop from "./views/Shop";
+import Home from "./views/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 /* Npm som används
 
@@ -18,7 +19,15 @@ react-carousel
 function App() {
   return (
     <>
-      <div>Test text!</div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Shop" element={<Shop />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </>
   );
 }
