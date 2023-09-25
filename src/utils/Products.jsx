@@ -86,8 +86,39 @@ import shoe7back from "../images/shoe7back.jpg";
 import shoe8front from "../images/shoe8front.png";
 import shoe8back from "../images/shoe8back.jpg";
 
-/* Produkterna */
+/* Slide */
+export const SlideData = [
+  {
+    id: 1,
+    title: "20% Off Your First Purchase",
+    desc: "Check out our selection of Sneakers",
+    cover: shoe3front,
+    text: "Shoes",
+  },
+  {
+    id: 2,
+    title: "20% Off Your First Purchase",
+    desc: "2",
+    cover: cap2front,
+    text: "Hats / Caps",
+  },
+  {
+    id: 3,
+    title: "3",
+    desc: "3",
+    cover: hoodie2front,
+    text: "Shirts",
+  },
+  {
+    id: 4,
+    title: "4",
+    desc: "4",
+    cover: pants5front,
+    text: "Pants",
+  },
+];
 
+/* Produkterna */
 export const ProductList = [
   /* Skorna */
   {
