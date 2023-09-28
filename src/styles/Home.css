@@ -32,15 +32,6 @@
   border: 2px solid black;
 }
 
-.breakline {
-  display: flex;
-  align-self: center;
-  width: 60%;
-  background-color: #449342;
-  border-radius: 8px;
-  height: 4px;
-}
-
 .product-card {
   display: flex;
   flex-direction: column;
@@ -93,6 +84,15 @@
   background: none;
   border: 1px solid black;
   transition: all 0.4s ease;
+}
+
+.category-select-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  height: 80vh;
+  width: 80vh;
 }
 
 .product-button:hover {

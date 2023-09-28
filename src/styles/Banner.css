@@ -1,0 +1,42 @@
+.banner-container {
+  position: relative;
+}
+
+.banner-container {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../assets/bannerImg.jpg);
+}
+
+.banner-text-container span {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #eeee;
+  font-weight: bold;
+  font-size: 2em;
+  padding-left: 10px;
+  padding-right: 10px;
+  transform: translate(-50%, -50%);
+}
+
+/*
+display: flex;
+justify-content: center;
+text-align: ;
+position: absolute;
+font-weight: bold;
+height: 100%;
+width: 100%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: rgba(0, 0, 0, 0.6);
+*/
