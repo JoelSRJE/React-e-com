@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import "../styles/CatCards.css";
 
-// Lägg till link
-const Categories = ({ product }) => {
+const Categories = ({ categoryData }) => {
   return (
-    <Link to="">
+    <Link to={categoryData.route}>
       <div className="category-select-card">
-        <img src={product.img} className="category-img" />
+        <img src={categoryData.img} className="category-img" />
         <div>
-          <span className="category-select-text">{product.category}</span>
+          <span className="category-select-text">{categoryData.category}</span>
         </div>
       </div>
     </Link>

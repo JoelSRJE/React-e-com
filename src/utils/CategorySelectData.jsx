@@ -6,27 +6,37 @@ import allprods from "../images/allprods.jpg";
 
 export const CategoryData = [
   {
+    id: 1,
     img: shoe3front,
     category: "Shoes",
+    route: "/Shoes",
   },
 
   {
+    id: 2,
     img: hoodie2front,
     category: "Shirts",
+    route: "/Shirts",
   },
 
   {
+    id: 3,
     img: pants5front,
     category: "Pants",
+    route: "/Pants",
   },
 
   {
+    id: 4,
     img: cap2front,
     category: "Headwear",
+    route: "/Hats",
   },
 
   {
+    id: 5,
     img: allprods,
     category: "All Products",
+    route: "/AllProducts",
   },
 ];

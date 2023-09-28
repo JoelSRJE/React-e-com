@@ -1,0 +1,108 @@
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 100%;
+  padding: 1em;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+}
+
+.return-btn,
+.visible {
+  background: transparent;
+  color: blue;
+}
+
+.category-card {
+  display: flex;
+  text-align: center;
+  height: 300px;
+  width: 400px;
+  border: 2px solid black;
+}
+
+.breakline {
+  display: flex;
+  align-self: center;
+  width: 60%;
+  background-color: #449342;
+  border-radius: 8px;
+  height: 4px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 440px;
+  width: 400px;
+  border-radius: 10px;
+  transition: 0.6s ease;
+}
+
+.product-card:hover {
+  scale: 1.05;
+  border: 2px solid #449342;
+}
+
+.product-logo {
+  padding: 0.5em;
+}
+
+.product-logo img {
+  height: 300px;
+  width: 350px;
+}
+
+.product-title-container {
+  padding-top: 1em;
+  font-size: 1.1em;
+  height: 150px;
+}
+
+.product-sub-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #449342;
+}
+
+.product-button {
+  border: none;
+  width: 40%;
+  align-self: center;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  background: none;
+  border: 1px solid black;
+  transition: all 0.4s ease;
+}
+
+.product-button:hover {
+  scale: 1.1;
+}
+
+.visible {
+  display: all;
+}
+
+.hidden {
+  display: none;
+}

@@ -20,8 +20,8 @@ const Home = () => {
       <h1 className="section-title">New Arrivals</h1>
       <hr className="breakline" />
       <section id="home-products">
-        {randomProducts.map((product) => (
-          <Randomized product={product} />
+        {randomProducts.map((product, idx) => (
+          <Randomized product={product} key={idx} />
         ))}
       </section>
       <hr className="breakline" />
