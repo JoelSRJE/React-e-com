@@ -7,7 +7,7 @@ const Randomized = ({ product }) => {
       <div className="product-logo">
         <img src={product.imgUrl} />
       </div>
-      <hr />
+      <hr className="breakline" />
       <div className="product-title-container">
         <span>{product.productName}</span>
       </div>

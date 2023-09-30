@@ -32,15 +32,6 @@
   border: 2px solid black;
 }
 
-.breakline {
-  display: flex;
-  align-self: center;
-  width: 60%;
-  background-color: #449342;
-  border-radius: 8px;
-  height: 4px;
-}
-
 .product-card {
   display: flex;
   flex-direction: column;

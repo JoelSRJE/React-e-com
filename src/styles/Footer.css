@@ -1,0 +1,54 @@
+.footer-wrapper {
+  height: 4em;
+  width: 100%;
+  padding: 1em;
+  background-color: #000000e1;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 6px;
+}
+
+.footer-all-rights {
+  font-weight: bold;
+  color: #e0dede;
+}
+
+.footer-icon-container {
+  display: flex;
+  gap: 1em;
+  transform: scale(1.4);
+}
+
+.icon {
+  background: none;
+  color: #e0dede;
+}
+
+#gh-icon:hover {
+  color: #2eaf7d;
+}
+
+#gh-icon {
+  position: relative;
+  top: 2px;
+  left: 3px;
+  background: none;
+  color: #e0dede;
+}
+
+.icon:hover {
+  color: #2eaf7d;
+}
+
+.made-by {
+  font-weight: bold;
+  color: #e0dede;
+}
+
+.made-by span {
+  color: #2eaf7d;
+}

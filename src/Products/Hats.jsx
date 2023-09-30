@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { ProductList } from "../utils/products";
+import { ProductList } from "../utils/Products";
 import DisplayProduct from "../components/DisplayProduct";
 
 const Hats = () => {
   const [hats, setHats] = useState([]);
 
   useEffect(() => {
-    setHats(ProductList.filter((product) => product.category === "Shoes"));
+    setHats(ProductList.filter((product) => product.category === "Hats"));
   }, []);
 
   return (

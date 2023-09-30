@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ProductList } from "./utils/products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./views/About";
 import Contact from "./views/Contact";

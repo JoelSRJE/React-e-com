@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SlideData } from "../utils/products";
+import { SlideData } from "../utils/Products";
 import Slides from "./slides";
 
 const SliderHome = () => {
@@ -18,13 +18,14 @@ const SliderHome = () => {
     <section className="Slide">
       <div>
         <Slider {...settings}>
-          {SlideData.map((value, index) => {
+          {SlideData.map((value, idx) => {
             return (
               <Slides
-                key={index}
+                key={idx}
                 title={value.title}
                 cover={value.cover}
                 desc={value.desc}
+                route={value.route}
               />
             );
           })}

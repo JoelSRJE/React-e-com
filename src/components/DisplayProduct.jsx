@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/DisplayProduct.css";
+import Banner from "./Banner";
 
 const DisplayProduct = ({ product }) => {
   return (
@@ -7,7 +8,7 @@ const DisplayProduct = ({ product }) => {
       <div className="product-logo">
         <img src={product.imgUrl} />
       </div>
-      <hr />
+      <hr className="breakline" />
       <div className="product-title-container">
         <span>{product.productName}</span>
       </div>
