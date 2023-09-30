@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { BsFillCartFill } from "react-icons/bs";
 import "../styles//Navbar.css";
 import brand from "../assets/brand.png";
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
+import Cart from "./Cart";
+import { ShopData } from "../App";
 
 const Navbar = () => {
   const [openLoginInModal, setOpenLoginModal] = useState(false);
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
+  const [openCartModal, setOpenCartModal] = useState(false);
+
+  const { cart, setCart } = useContext(ShopData);
+
+  useEffect(() => {
+    if (cart.length === 0) {
+      const cartStorage = localStorage.getItem("cart");
+      setCart(JSON.parse(cartStorage));
+    }
+  }, []);
 
   return (
     <div className="navbar-wrapper">
@@ -39,8 +51,12 @@ const Navbar = () => {
         <nav className="nav">
           <div className="nav-btn-wrapper">
             <p id="divider">|</p>
-            <button className="nav-btn">
+            <button
+              className="nav-btn cart"
+              onClick={() => setOpenCartModal(true)}
+            >
               <BsFillCartFill />
+              {cart.length}
             </button>
             <button
               onClick={() => setOpenRegisterModal(true)}
@@ -56,6 +72,7 @@ const Navbar = () => {
             </button>
           </div>
         </nav>
+        {openCartModal && <Cart setOpenCartModal={setOpenCartModal} />}
         {openLoginInModal && (
           <LoginModal setOpenLoginModal={setOpenLoginModal} />
         )}

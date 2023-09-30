@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/RegisterModal.css";
-import { Link } from "react-router-dom";
 
 const RegisterModal = ({ setOpenRegisterModal }) => {
   return (

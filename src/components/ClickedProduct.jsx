@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Banner from "./Banner";
 import { useParams } from "react-router-dom";
-import { ProductList } from "../utils/Products";
 import { ShopData } from "../App";
 
 // Fixa styling för produkten.
@@ -9,12 +8,17 @@ import { ShopData } from "../App";
 const ClickedProduct = () => {
   const { id } = useParams();
 
-  const { selectProduct, setSelectProduct } = useContext(ShopData);
+  const { selectProduct, setSelectProduct, addItemToCart, cart } =
+    useContext(ShopData);
 
   if (!selectProduct) {
     const storedProduct = localStorage.getItem(`selectedProduct ${id}`);
     setSelectProduct(JSON.parse(storedProduct));
   }
+
+  const addProduct = (selectProduct, quantity) => {
+    addItemToCart(selectProduct, quantity);
+  };
 
   return (
     <article>
@@ -28,7 +32,10 @@ const ClickedProduct = () => {
           <span>{selectProduct?.productName}</span>
         </div>
         <div className="product-sub-container">
-          <span className="product-price">${selectProduct?.price}</span>
+          <span className="product-price">
+            ${selectProduct?.price}
+            <button onClick={() => addProduct(selectProduct)}>Add</button>
+          </span>
         </div>
       </div>
     </article>
