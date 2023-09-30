@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./views/About";
 import Contact from "./views/Contact";
@@ -12,6 +12,9 @@ import Shoes from "./Products/Shoes";
 import Pants from "./Products/Pants";
 import Hats from "./Products/Hats";
 import Shirts from "./Products/Shirts";
+import ClickedProduct from "./components/ClickedProduct";
+
+export const ShopData = createContext();
 
 /* Npm som används
 
@@ -24,8 +27,10 @@ react-carousel
 */
 
 function App() {
+  const [selectProduct, setSelectProduct] = useState(null);
+
   return (
-    <>
+    <ShopData.Provider value={{ selectProduct, setSelectProduct }}>
       <Router>
         <div className="App">
           <Navbar />
@@ -40,11 +45,12 @@ function App() {
             <Route path="/Pants" element={<Pants />} />
             <Route path="/Hats" element={<Hats />} />
             <Route path="/Shirts" element={<Shirts />} />
+            <Route path="/ClickedProduct/:id" element={<ClickedProduct />} />
           </Routes>
           <Footer />
         </div>
       </Router>
-    </>
+    </ShopData.Provider>
   );
 }
 

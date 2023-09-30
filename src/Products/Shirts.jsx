@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { ProductList } from "../utils/products";
-import DisplayProduct from "../components/DisplayProduct";
+import { ProductList } from "../utils/Products";
+import DisplayProducts from "../components/DisplayProducts";
+import Banner from "../components/Banner";
 
 const Shirts = () => {
   const [shirts, setShirts] = useState([]);
@@ -10,10 +11,15 @@ const Shirts = () => {
   }, []);
 
   return (
-    <section id="products">
-      {shirts.map((product) => (
-        <DisplayProduct product={product} />
-      ))}
+    <section>
+      <Banner category="Shirts" />
+      <div id="products">
+        {shirts
+          .map((product) => (
+            <DisplayProducts product={product} key={product.id} />
+          ))
+          .slice()}
+      </div>
     </section>
   );
 };

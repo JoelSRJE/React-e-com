@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { ProductList } from "../utils/products";
+import { ProductList } from "../utils/Products";
 import Randomized from "../components/Randomized";
 import SliderHome from "../slider/Slider";
 import "../styles/Home.css";
