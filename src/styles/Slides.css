@@ -1,6 +1,13 @@
 .Slide {
-  margin-top: 60px;
-  padding: 0 40px 60px;
+  background: rgb(244, 242, 243);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 242, 243, 1) 10%,
+    rgba(148, 202, 148, 1) 35%,
+    rgba(244, 242, 243, 1) 82%
+  );
+  padding: 3em;
+  margin-bottom: 2em;
 }
 
 .slide-container {
@@ -10,7 +17,6 @@
 
 .slide-title {
   font-size: 40px;
-  line-height: 100px;
   margin: 60px 5px 10px 5px;
 }
 
@@ -35,6 +41,7 @@
   margin: auto;
   height: 3px;
   width: 0px;
+
   background: transparent;
   transition: width 0.5s ease, background-color 0.5s ease;
 }
