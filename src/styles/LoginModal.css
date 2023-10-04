@@ -5,9 +5,11 @@
   position: absolute;
   height: 90vh;
   z-index: 9999;
+  left: 50%;
 }
 
 .login-overlay h1 {
+  font-size: 2.5vw;
   text-align: center;
   background-image: linear-gradient(to right, #366935, #2eaf7d, #c1f6ed);
   background-clip: text;
@@ -21,15 +23,15 @@
   padding: 1em;
   color: black;
   background-color: #ffffff;
-  width: 18em;
-  height: 20em;
+  min-width: 15em;
+  min-height: 18em;
   box-shadow: 0px 0px 0px 5px rgba(46, 175, 125, 0.4);
 }
 
 .close-btn {
   background: none;
   border: none;
-  font-size: 1em;
+  font-size: 1.5vw;
   transition: all 0.4s ease;
 }
 
@@ -46,6 +48,10 @@
   margin-bottom: 1em;
 }
 
+.login-title {
+  font-size: 1.3vw;
+}
+
 .password,
 .email {
   margin-top: 0.5em;
@@ -57,7 +63,7 @@
   left: 40%;
   color: #7ce7d5;
   border: none;
-  font-size: 1em;
+  font-size: 1.3vw;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.4s ease;
@@ -65,18 +71,18 @@
   padding: 2px;
 }
 
-.login-button:hover {
-  border: 2px solid #342343;
-}
-
 .login-bottom-text {
-  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  margin-top: 2em;
+  font-size: 1vw;
 }
 
 .register-btn {
   background: none;
   border: none;
-  font-size: 1em;
+  font-size: 1vw;
   cursor: pointer;
 }
 

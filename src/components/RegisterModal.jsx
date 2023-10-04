@@ -17,7 +17,7 @@ const RegisterModal = ({ setOpenRegisterModal }) => {
         <hr className="breakline" />
         <form>
           <div className="register-field">
-            <label>Email</label>
+            <label className="register-title">Email</label>
             <input
               className="email"
               type="email"
@@ -26,20 +26,30 @@ const RegisterModal = ({ setOpenRegisterModal }) => {
             />
           </div>
           <div className="register-field">
-            <label>Username</label>
-            <input className="username" type="username" required />
+            <label className="register-title">Username</label>
+            <input
+              className="username"
+              type="username"
+              placeholder="Example Name"
+              required
+            />
           </div>
           <div className="register-field">
-            <label>Password</label>
-            <input className="password" type="password" required />
+            <label className="register-title">Password</label>
+            <input
+              className="password"
+              type="password"
+              placeholder="*******"
+              required
+            />
           </div>
 
           <button className="register-button">Register</button>
         </form>
 
-        <p>
+        <p className="register-bottom-text">
           Already have an account?
-          <button className="register-btn">Login</button>
+          <button className="login-btn">Login</button>
         </p>
       </div>
     </div>

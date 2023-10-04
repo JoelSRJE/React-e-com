@@ -1,0 +1,122 @@
+.clicked-section {
+  height: 80vh;
+}
+
+/* Ändra background */
+
+.product-wrapper {
+  display: flex;
+  margin-top: 2em;
+}
+
+.product-container {
+  display: flex;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Produkt bilden */
+
+.product-logo-container {
+  background-color: #afd8af;
+  clip-path: polygon(
+    5% 10%,
+    10% 5%,
+    90% 5%,
+    95% 10%,
+    95% 90%,
+    90% 95%,
+    10% 95%,
+    5% 90%
+  );
+  height: 20em;
+}
+
+.product-logo {
+  width: 380px;
+}
+
+.product-logo img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Text sidan */
+
+.product-information {
+  border-left: 2px solid silver;
+  padding: 1em;
+  width: 15em;
+}
+
+.product-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  border-bottom: 2px solid #449342;
+}
+
+.product-subcategory {
+  text-align: center;
+  min-height: 2em;
+  padding: 1em;
+}
+
+.product-description {
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+  padding: 0.7em;
+  min-height: 11em;
+  margin-bottom: 1em;
+}
+
+.count-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 2em;
+  width: 80%;
+}
+
+.counter {
+  background: none;
+  border: none;
+  height: 2em;
+  width: 2em;
+}
+
+.count-active {
+  height: 2em;
+  width: 2em;
+  background: transparent;
+  border: 1px solid #449342;
+  cursor: pointer;
+  animation: all 0.3s ease;
+}
+
+.count-active:hover {
+  transform: scale(1.05);
+}
+
+.product-price {
+  padding: 0.3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-price button {
+  position: relative;
+  bottom: 2px;
+  width: 7em;
+  height: 2em;
+  border: 2px solid #449342;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.product-price button:hover {
+  transform: scale(1.1);
+}

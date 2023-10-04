@@ -5,9 +5,11 @@
   position: absolute;
   height: 90vh;
   z-index: 9999;
+  left: 50%;
 }
 
 .register-overlay h1 {
+  font-size: 2.5vw;
   text-align: center;
   background-image: linear-gradient(to right, #366935, #2eaf7d, #c1f6ed);
   background-clip: text;
@@ -21,15 +23,15 @@
   padding: 1em;
   color: black;
   background-color: #ffffff;
-  width: 18em;
-  height: 20em;
+  min-width: 15em;
+  min-height: 18em;
   box-shadow: 0px 0px 0px 5px rgba(46, 175, 125, 0.4);
 }
 
 .close-btn {
   background: none;
   border: none;
-  font-size: 1em;
+  font-size: 1.5vw;
   transition: all 0.4s ease;
 }
 
@@ -45,41 +47,48 @@
   flex-direction: column;
   margin-bottom: 1em;
 }
+.register-title {
+  font-size: 1.3vw;
+}
 
 .password,
-.email {
+.email,
+.username {
   margin-top: 0.5em;
   align-self: center;
 }
 
 .register-button {
   position: relative;
-  left: 40%;
+  left: 36%;
   color: #7ce7d5;
   border: none;
-  font-size: 1em;
-  border-radius: 5px;
+  font-size: 1.3vw;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.1s ease;
   background: none;
-  padding: 2px;
-}
-
-.register-button:hover {
-  border: 2px solid #342343;
+  padding: 3px;
 }
 
 .register-bottom-text {
   margin-top: 1em;
 }
 
-.register-btn {
+.login-btn {
   background: none;
   border: none;
-  font-size: 1em;
+  font-size: 1vw;
   cursor: pointer;
 }
 
-.register-btn:hover {
+.login-btn:hover {
   color: #3fd0c9;
+}
+
+.register-bottom-text {
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  margin-top: 1em;
+  font-size: 1vw;
 }

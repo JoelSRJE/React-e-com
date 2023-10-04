@@ -17,7 +17,7 @@ const LoginModal = ({ setOpenLoginModal }) => {
         <hr className="breakline" />
         <form>
           <div className="login-field">
-            <label>Email</label>
+            <label className="login-title">Email</label>
             <input
               className="email"
               type="email"
@@ -27,7 +27,7 @@ const LoginModal = ({ setOpenLoginModal }) => {
           </div>
 
           <div className="login-field">
-            <label>Password</label>
+            <label className="login-title">Password</label>
             <input
               className="password"
               type="password"
@@ -38,7 +38,7 @@ const LoginModal = ({ setOpenLoginModal }) => {
           <button className="login-button">Sign in</button>
         </form>
         <p className="login-bottom-text">
-          Dont have an account?{" "}
+          Dont have an account?
           <button className="register-btn">Register</button>
         </p>
       </div>
