@@ -1,41 +1,137 @@
-.cart-overlay {
+.cart-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 90vh;
-  z-index: 9999;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: auto;
 }
 
-.cart-overlay h1 {
-  text-align: center;
-  background-image: linear-gradient(to right, #366935, #2eaf7d, #c1f6ed);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.empty-container {
+  margin: 1em;
+  background-color: white;
+  box-shadow: 0 2px 6px #555;
+  padding: 15px;
 }
 
-.cart-container {
-  position: absolute;
-  border-radius: 20px;
-  padding: 1em;
-  color: black;
-  background-color: #ffffff;
-  width: 18em;
-  height: 20em;
-  box-shadow: 0px 0px 0px 5px rgba(46, 175, 125, 0.4);
-}
-
-.cart-items {
-  display: flex;
-  flex-direction: row;
-  border-bottom: 2px solid #449342;
-}
-
-.cart-product-logo img {
-  width: 3em;
+.empty-container p {
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 30px;
   height: 3em;
 }
 
+/* Vänster sida */
+.cart-container {
+  flex-direction: column;
+}
+
+.cart-product {
+  display: flex;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0 2px 6px #555;
+  padding: 15px;
+  position: relative;
+  width: 30em;
+}
+
+.cart-img {
+  width: 6em;
+  height: 8em;
+}
+
+.cart-img img {
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  object-fit: contain;
+}
+
 .cart-product-title {
+  position: absolute;
+  top: 20px;
+  left: 140px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.cart-product-subcategory {
+  position: relative;
+  font-size: 12px;
+  font-style: italic;
+  top: 30px;
+  left: 30px;
+}
+
+.cart-price {
+  position: relative;
+  top: 80px;
+  left: 30px;
+}
+
+.pricing {
+  color: #449342;
+}
+
+.cart-total {
+  position: relative;
+  left: 70px;
+  color: #449342;
+}
+
+.cart-buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.cart-buttons button {
+  height: 2em;
+  width: 2em;
+  margin: 1em;
+  background: transparent;
+  border: 1px solid #449342;
+  cursor: pointer;
+  animation: all 0.3s ease;
+}
+
+.cart-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.delete-item {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: grey;
+  font-size: 1em;
+  padding: 0.5em;
+  animation: all 0.4s ease;
+}
+
+.delete-item:hover {
+  transform: scale(1.1);
+  color: Crimson;
+}
+
+/* Höger sida */
+
+.cart-summary-wrapper {
+  height: 80vh;
+}
+
+.cart-summary-container {
+  background: white;
+  box-shadow: 0 2px 6px #555;
+  padding: 15px;
+  margin: 1em;
+  min-height: 6em;
+  min-width: 20em;
+}
+
+.cart-summary-container h2 {
+  display: flex;
+  gap: 1em;
 }

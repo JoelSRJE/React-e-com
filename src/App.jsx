@@ -7,13 +7,12 @@ import Home from "./views/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Categories from "./components/Categories";
-import AllProducts from "./Products/AllProducts";
 import Shoes from "./Products/Shoes";
 import Pants from "./Products/Pants";
 import Hats from "./Products/Hats";
 import Shirts from "./Products/Shirts";
 import ClickedProduct from "./components/ClickedProduct";
-
+import Cart from "./components/Cart";
 export const ShopData = createContext();
 
 /* Npm som används
@@ -30,50 +29,39 @@ function App() {
   const [selectProduct, setSelectProduct] = useState(null);
   const [cart, setCart] = useState([]);
 
-  const addItemToCart = (product) => {
-    setCart([...cart, { product: product, amount: 1 }]);
+  const addItemToCart = (product, number = 1) => {
+    const doProductExist = cart.find((object) => object.id === product.id);
+    if (doProductExist) {
+      setCart(
+        cart.map((object) =>
+          object.id === product.id
+            ? { ...doProductExist, amount: doProductExist.amount + number }
+            : object
+        )
+      );
+    } else {
+      setCart([...cart, { ...product, amount: number }]);
+    }
   };
 
-  const removeItemFromCart = (product) => {
-    setCart(cart.filter((item) => item.product !== product));
-  };
+  const decreaseCartAmount = (product) => {
+    const doProductExist = cart.find((object) => object.id === product.id);
 
-  const increaseCartAmount = (item) => {
-    setCart(
-      cart.map((all) => {
-        if (all === item) {
-          return { ...item, amount: item.amount + 1 };
-        } else {
-          return all;
-        }
-      })
-    );
-  };
-
-  const decreaseCartAmount = (item) => {
-    if (item.amount === 1) {
-      setCart(cart.filter((all) => all !== item));
+    if (doProductExist.amount === 1) {
+      setCart(cart.filter((object) => object.id !== product.id));
     } else {
       setCart(
-        cart.map((all) => {
-          if (all === item) {
-            return { ...item, amount: item.amount - 1 };
-          } else {
-            return all;
-          }
-        })
+        cart.map((object) =>
+          object.id == product.id
+            ? { ...doProductExist, amount: doProductExist.amount - 1 }
+            : object
+        )
       );
     }
   };
 
-  const doesItemExist = (product) => {
-    for (let item of cart) {
-      if (item.product === product) {
-        return true;
-      }
-    }
-
-    return false;
+  const deleteEntireProduct = (product) => {
+    setCart(cart.filter((object) => object.id !== product.id));
   };
 
   useEffect(() => {
@@ -83,15 +71,13 @@ function App() {
   return (
     <ShopData.Provider
       value={{
-        selectProduct,
-        setSelectProduct,
         cart,
         setCart,
         addItemToCart,
-        removeItemFromCart,
-        increaseCartAmount,
+        selectProduct,
+        setSelectProduct,
+        deleteEntireProduct,
         decreaseCartAmount,
-        doesItemExist,
       }}
     >
       <Router>
@@ -103,7 +89,7 @@ function App() {
             <Route path="/About" element={<About />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Categories" element={<Categories />} />
-            <Route path="/AllProducts" element={<AllProducts />} />
+            <Route path="/Cart" element={<Cart />} />
             <Route path="/Shoes" element={<Shoes />} />
             <Route path="/Pants" element={<Pants />} />
             <Route path="/Hats" element={<Hats />} />
