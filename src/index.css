@@ -9,11 +9,16 @@ html {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f4f2f3;
   margin: 0;
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Victor Mono", monospace;
+}
+
+button {
+  font-family: "Victor Mono", monospace;
 }
 
 .section-title {
@@ -32,4 +37,124 @@ body {
 body,
 html {
   overflow-x: hidden;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1000px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  /* Navbar */
+  .navbar-wrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 2em;
+    padding: 2em;
+  }
+
+  #divider {
+    display: none;
+  }
+
+  /* Slide-component */
+  .slide-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1750px), screen and (max-height: 1000px) {
+  /* Home-section */
+  .category-select-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3em;
+  }
+
+  /* Season-component */
+  .season-wrapper {
+    margin-top: 6em;
+  }
+
+  /* Contact-section */
+  .form-container {
+    top: 55%;
+    left: 65%;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1560px) {
+  /* Home-section */
+  .category-select-container {
+    margin-bottom: 30em;
+  }
+}
+
+@media only screen and (max-width: 1200px), screen and (max-height: 800px) {
+  .form-container {
+    left: 75%;
+    min-width: 20em;
+    min-height: 20em;
+  }
+
+  .form-field {
+    padding: 0.5em;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  .pencil-icon {
+    left: 130px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  /* Season-component */
+  .season-wrapper {
+    display: none;
+  }
+
+  /* Home-section */
+  #home-products-wrapper {
+    margin-top: 30em;
+  }
+
+  /* Register modal & Login modal*/
+  .register-container,
+  .login-container {
+    min-width: 13em;
+  }
+
+  .close-btn {
+    font-size: 1em;
+  }
+
+  .register-title,
+  .register-button,
+  .login-title,
+  .login-button {
+    font-size: 2vw;
+  }
+
+  .register-bottom-text,
+  .login-btn,
+  .login-bottom-text,
+  .register-btn {
+    font-size: 1.4vw;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  #products {
+    margin: 0;
+  }
 }
