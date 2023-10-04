@@ -1,7 +1,7 @@
 .navbar-wrapper {
   display: flex;
-  background-color: #eeeeee;
-  height: 10em;
+  background-color: #f4f2f3;
+  height: 6em;
   align-items: center;
   justify-content: space-evenly;
   flex-flow: row wrap;
@@ -10,8 +10,8 @@
 }
 
 .logo {
-  width: 9em;
-  height: 7em;
+  width: 6em;
+  height: 4.5em;
   font-size: 1.4em;
   scale: 3;
 }
@@ -19,7 +19,7 @@
 .navbar-content {
   font-size: 1.5em;
   color: #eeeeee;
-  height: 3em;
+  height: 1.6em;
   width: auto;
 }
 
@@ -98,4 +98,45 @@
 .sticky {
   position: sticky;
   position: -webkit-sticky;
+}
+
+/* CategoryNavbar.jsx */
+
+.category-navbar {
+  padding: 1em;
+  margin: auto;
+  width: 50%;
+  height: 3em;
+}
+
+.category-navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.category-navbar li {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.4em;
+}
+
+.rainbow-one {
+  border: 2px solid #f3e3bb;
+}
+
+.rainbow-two {
+  border: 2px solid #badbd4;
+}
+
+.rainbow-three {
+  border: 2px solid #a9cae6;
+}
+
+.rainbow-four {
+  border: 2px solid #d8c7f0;
+}
+
+.rainbow-five {
+  border: 2px solid #eebcd7;
 }

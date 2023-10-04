@@ -1,17 +1,15 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BsFillCartFill } from "react-icons/bs";
 import "../styles//Navbar.css";
 import brand from "../assets/brand.png";
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
-import Cart from "./Cart";
 import { ShopData } from "../App";
 
 const Navbar = () => {
   const [openLoginInModal, setOpenLoginModal] = useState(false);
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
-  const [openCartModal, setOpenCartModal] = useState(false);
 
   const { cart, setCart } = useContext(ShopData);
 
@@ -51,28 +49,27 @@ const Navbar = () => {
         <nav className="nav">
           <div className="nav-btn-wrapper">
             <p id="divider">|</p>
-            <button
-              className="nav-btn cart"
-              onClick={() => setOpenCartModal(true)}
-            >
-              <BsFillCartFill />
-              {cart.length}
-            </button>
+            <Link to="/Cart">
+              <button className="nav-btn cart">
+                <BsFillCartFill />
+                {cart.length}
+              </button>
+            </Link>
+
             <button
               onClick={() => setOpenRegisterModal(true)}
               className="nav-btn"
             >
-              Register
+              <p>Register</p>
             </button>
             <button
               onClick={() => setOpenLoginModal(true)}
               className="nav-btn login-modal"
             >
-              Login
+              <p>Login</p>
             </button>
           </div>
         </nav>
-        {openCartModal && <Cart setOpenCartModal={setOpenCartModal} />}
         {openLoginInModal && (
           <LoginModal setOpenLoginModal={setOpenLoginModal} />
         )}

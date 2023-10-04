@@ -1,36 +1,64 @@
+/* Home.jsx */
+/* home-products används i Shop.jsx likaså */
+#home-products-wrapper {
+  margin-top: 3em;
+}
+
 #home-products {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   gap: 2em;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 100%;
   padding: 1em;
 }
 
-.card-container {
+/* Slut: Home.jsx */
+
+/* Categories */
+
+.category-select-container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   gap: 2em;
+  height: 30vh;
+  padding: 2em;
 }
 
-.return-btn,
-.visible {
-  background: transparent;
-  color: blue;
-}
-
-.category-card {
+.category-select-card {
   display: flex;
-  text-align: center;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
   height: 300px;
-  width: 400px;
-  border: 2px solid black;
+  width: 350px;
+  box-shadow: 5px 2px 20px rgba(136, 136, 136, 1);
 }
+
+.category-select-card:hover {
+  transform: scale(1.01);
+  border: 2px solid #449342;
+}
+
+.category-img {
+  height: 100%;
+  width: 100%;
+}
+
+.category-select-card span {
+  position: absolute;
+  font-weight: bold;
+  top: 5%;
+  padding: 1em;
+  color: black;
+  right: 0;
+}
+
+/* Randomized.jsx */
 
 .product-card {
   display: flex;
@@ -39,6 +67,7 @@
   width: 400px;
   border-radius: 10px;
   transition: 0.6s ease;
+  padding: 1em;
 }
 
 .product-card:hover {
@@ -56,14 +85,16 @@
 }
 
 .product-title-container {
+  position: relative;
+  left: 15px;
   padding-top: 1em;
-  font-size: 1.1em;
-  height: 150px;
+  font-size: 1.2em;
+  height: 2em;
 }
 
 .product-sub-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2em;
   margin-bottom: 1em;
 }
@@ -73,36 +104,15 @@
   color: #449342;
 }
 
-.product-button {
-  border: none;
-  width: 40%;
-  align-self: center;
-  font-size: 1em;
-  border-radius: 5px;
-  cursor: pointer;
-  color: black;
-  background: none;
-  border: 1px solid black;
-  transition: all 0.4s ease;
-}
-
-.category-select-container {
+.category-card {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2em;
-  height: 80vh;
-  width: 80vh;
+  text-align: center;
+  height: 300px;
+  width: 400px;
+  border: 2px solid black;
 }
 
-.product-button:hover {
-  scale: 1.1;
-}
-
-.visible {
-  display: all;
-}
-
-.hidden {
-  display: none;
+.random-button-container {
+  display: flex;
+  justify-content: flex-end;
 }

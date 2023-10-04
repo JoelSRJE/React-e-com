@@ -1,5 +1,8 @@
+/* Start: Banner */
+
 .banner-container {
   position: relative;
+  margin-bottom: 2em;
 }
 
 .banner-container {
@@ -9,7 +12,12 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../assets/bannerImg.jpg);
+  background-image: linear-gradient(
+      180deg,
+      rgba(46, 175, 125, 0.3),
+      rgba(244, 242, 243, 0.6)
+    ),
+    url(../assets/bannerImg.jpg);
 }
 
 .banner-text-container span {
@@ -27,16 +35,26 @@
   transform: translate(-50%, -50%);
 }
 
-/*
-display: flex;
-justify-content: center;
-text-align: ;
-position: absolute;
-font-weight: bold;
-height: 100%;
-width: 100%;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: rgba(0, 0, 0, 0.6);
-*/
+/* Slut: Banner */
+
+/* Start: Season */
+
+.season-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 2em;
+}
+
+.season-container {
+  position: relative;
+  line-height: 0px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.season-container img {
+  width: 100%;
+}
+
+/* Slut: Season */
