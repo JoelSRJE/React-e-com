@@ -1,0 +1,17 @@
+.category-navbar {
+  padding: 1em;
+  margin: auto;
+  width: 50%;
+  height: 3em;
+}
+
+.category-navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.category-navbar li {
+  list-style: none;
+  cursor: pointer;
+}

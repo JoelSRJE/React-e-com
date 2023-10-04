@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/CatCards.css";
 
 const Categories = ({ categoryData }) => {
   return (

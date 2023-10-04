@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ShopData } from "../App";
 
 const DisplayProducts = ({ product }) => {
-  const { setSelectProduct } = useContext(ShopData);
+  const { setSelectProduct, addItemToCart } = useContext(ShopData);
 
   const router = useNavigate();
 
@@ -18,9 +18,9 @@ const DisplayProducts = ({ product }) => {
   };
 
   return (
-    <div className="product-card" onClick={() => onClick()}>
+    <div className="product-card">
       <div className="product-logo">
-        <img src={product.imgUrl} />
+        <img src={product.imgUrl} onClick={() => onClick()} />
       </div>
       <hr className="breakline" />
       <div className="product-title-container">
@@ -28,6 +28,9 @@ const DisplayProducts = ({ product }) => {
       </div>
       <div className="product-sub-container">
         <span className="product-price">${product.price}</span>
+        <button className="add-cart" onClick={() => addItemToCart(product)}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
