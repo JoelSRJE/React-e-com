@@ -6,6 +6,7 @@ import { SlideData } from "../utils/Products";
 import Slides from "./slides";
 
 const SliderHome = () => {
+  /* Inställningar för slide */
   const settings = {
     nav: false,
     infinite: true,

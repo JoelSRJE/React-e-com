@@ -7,6 +7,7 @@ import { CategoryData } from "../utils/CategorySelectData";
 import Categories from "../components/Categories";
 import Season from "../components/Season";
 
+/* Hämtar random produkter från ProductList, visas vid "Home" som "New Arrivals" */
 const getRandomProducts = () => {
   const randomProds = ProductList.toSorted(() => Math.random() - Math.random());
   return randomProds.slice(0, 8);

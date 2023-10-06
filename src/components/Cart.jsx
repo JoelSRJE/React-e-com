@@ -5,6 +5,7 @@ import { AiOutlinePlusSquare, AiOutlineMinusSquare } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 
 const Cart = () => {
+  /* Skickar detta med useContext */
   const {
     cart,
     setCart,
@@ -13,11 +14,13 @@ const Cart = () => {
     deleteEntireProduct,
   } = useContext(ShopData);
 
+  /* Beräknar totala priset */
   const total = cart.reduce(
     (price, object) => price + object.amount * object.price,
     0
   );
 
+  /* Hämtar cart, en gång */
   useEffect(() => {
     if (cart.length === 0) {
       const cartStorage = localStorage.getItem("cart");
@@ -28,11 +31,13 @@ const Cart = () => {
   return (
     <section className="cart-wrapper">
       <div className="cart-container">
+        {/* Om cart(array) är tom, placera denna div istället */}
         {cart.length === 0 && (
           <div className="empty-container">
             <p>Its empty here, add something to the cart!</p>
           </div>
         )}
+        {/* Mappar ut produkter om cart har något i array:en*/}
         {cart.map((product) => {
           const amount = product.price * product.amount;
           return (
@@ -68,6 +73,7 @@ const Cart = () => {
           );
         })}
       </div>
+      {/* Ska arbeta vidare på denna, för en detaljerad lista över produkterna, dvs allt förutom bilderna*/}
       <div className="cart-summary-wrapper">
         <div className="cart-summary-container">
           <div>

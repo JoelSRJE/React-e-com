@@ -2,6 +2,7 @@ import "../styles/CategoryNavbar.css";
 import { useNavigate } from "react-router-dom";
 
 const CategoryNavbar = () => {
+  /* Routar respektive alternativ till sin kategori */
   const navigate = useNavigate();
 
   return (

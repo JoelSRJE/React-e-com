@@ -6,7 +6,9 @@ import { useState } from "react";
 import "../styles/Home.css";
 
 const Shop = () => {
+  /* Visar mer produkter vid onClick */
   const [toggle, setToggle] = useState(false);
+
   return (
     <>
       <Banner category="Shop" />

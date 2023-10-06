@@ -7,6 +7,7 @@ import CategoryNavbar from "../components/CategoryNavbar";
 const Hats = () => {
   const [hats, setHats] = useState([]);
 
+  /* Sorterar alla produkter med kategorin Hats */
   useEffect(() => {
     setHats(ProductList.filter((product) => product.category === "Hats"));
   }, []);

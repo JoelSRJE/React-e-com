@@ -7,6 +7,7 @@ import CategoryNavbar from "../components/CategoryNavbar";
 const Shirts = () => {
   const [shirts, setShirts] = useState([]);
 
+  /* Sorterar alla produkter med kategorin Shirts */
   useEffect(() => {
     setShirts(ProductList.filter((product) => product.category === "Shirts"));
   }, []);

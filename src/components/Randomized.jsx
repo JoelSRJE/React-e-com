@@ -1,13 +1,30 @@
 import "../styles/Home.css";
 import { useContext } from "react";
 import { ShopData } from "../App";
+import { useNavigate } from "react-router-dom";
 
 const Randomized = ({ product }) => {
-  const { addItemToCart } = useContext(ShopData);
+  /* Hämtar från App.jsx */
+  const { addItemToCart, setSelectProduct } = useContext(ShopData);
+
+  /* Routar med navigate */
+  const router = useNavigate();
+
+  /* Routing tillsammans med navigate till Clickedproduct, samt den produkt du klickade på */
+  const onClick = () => {
+    setSelectProduct(product);
+    localStorage.setItem(
+      `selectProduct-${product.id}`,
+      JSON.stringify(product)
+    );
+    /* Routar det alternativ man klickar på */
+    router(`/ClickedProduct/${product.id}`);
+  };
+
   return (
     <div className="product-card">
       <div className="product-logo">
-        <img src={product.imgUrl} />
+        <img src={product.imgUrl} onClick={onClick} />
       </div>
       <hr className="breakline" />
       <div className="product-title-container">

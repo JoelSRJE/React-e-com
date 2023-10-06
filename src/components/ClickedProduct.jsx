@@ -1,23 +1,22 @@
 import React, { useContext, useState } from "react";
 import Banner from "./Banner";
-import { useParams } from "react-router-dom";
 import { ShopData } from "../App";
 import "../styles/ClickedProduct.css";
-// Fixa styling för produkten.
 
 const ClickedProduct = () => {
+  /* Räknar antalet produkter */
   const [count, setCount] = useState(1);
 
+  /* Hämtar detta från App.jsx via useContext */
   const { selectProduct, setSelectProduct, addItemToCart } =
     useContext(ShopData);
-
-  const { id } = useParams();
 
   if (!selectProduct) {
     const storedProduct = localStorage.getItem(`selectedProduct-${id}`);
     setSelectProduct(JSON.parse(storedProduct));
   }
 
+  /* Placerar produkten samt antal i cart */
   const addProduct = (selectProduct, count) => {
     addItemToCart(selectProduct, count);
   };

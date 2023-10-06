@@ -4,16 +4,19 @@ import { useNavigate } from "react-router-dom";
 import { ShopData } from "../App";
 
 const DisplayProducts = ({ product }) => {
+  /* Hämtar detta från App.jsx via useContext */
   const { setSelectProduct, addItemToCart } = useContext(ShopData);
 
   const router = useNavigate();
 
+  /* Sparar i localStorage */
   const onClick = () => {
     setSelectProduct(product);
     localStorage.setItem(
       `selectProduct-${product.id}`,
       JSON.stringify(product)
     );
+    /* Routar det alternativ man klickar */
     router(`/ClickedProduct/${product.id}`);
   };
 

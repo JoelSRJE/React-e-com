@@ -11,14 +11,8 @@ const Navbar = () => {
   const [openLoginInModal, setOpenLoginModal] = useState(false);
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
 
+  /* Kallas från App.jsx för att visa hur många unika produkter är i Cart */
   const { cart, setCart } = useContext(ShopData);
-
-  useEffect(() => {
-    if (cart.length === 0) {
-      const cartStorage = localStorage.getItem("cart");
-      setCart(JSON.parse(cartStorage));
-    }
-  }, []);
 
   return (
     <div className="navbar-wrapper">

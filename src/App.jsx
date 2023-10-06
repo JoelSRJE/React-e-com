@@ -15,20 +15,11 @@ import ClickedProduct from "./components/ClickedProduct";
 import Cart from "./components/Cart";
 export const ShopData = createContext();
 
-/* Npm som används
-
-vite
-react-router-dom
-react-icons
-react-slick
-react-carousel
-
-*/
-
 function App() {
   const [selectProduct, setSelectProduct] = useState(null);
   const [cart, setCart] = useState([]);
 
+  /* Lägger till produkter i cart */
   const addItemToCart = (product, number = 1) => {
     const doProductExist = cart.find((object) => object.id === product.id);
     if (doProductExist) {
@@ -44,6 +35,7 @@ function App() {
     }
   };
 
+  /* Minkar antalet produkter i cart */
   const decreaseCartAmount = (product) => {
     const doProductExist = cart.find((object) => object.id === product.id);
 
@@ -60,6 +52,7 @@ function App() {
     }
   };
 
+  /* Raderar produkten i cart */
   const deleteEntireProduct = (product) => {
     setCart(cart.filter((object) => object.id !== product.id));
   };
@@ -69,6 +62,7 @@ function App() {
   }, [cart]);
 
   return (
+    /* Skickar detta via useContext */
     <ShopData.Provider
       value={{
         cart,
